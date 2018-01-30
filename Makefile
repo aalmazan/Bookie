@@ -162,7 +162,7 @@ deps: venv
 	fi
 	@echo "Making sure the latest version of pip is available"
 	# $(PIP) install -U pip
-	$(PIP) install --no-index --no-dependencies --find-links file:///$(CACHE)/python -r requirements.txt
+	$(PIP) install --no-dependencies -r requirements.txt
 	# Fetch the nltk data we need.
 	mkdir $(NLTK_DATA) || true
 	NLTK_DATA=$(NLTK_DATA) $(PY) -m textblob.download_corpora lite
