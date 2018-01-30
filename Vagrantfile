@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu/xenial64"
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.network :forwarded_port, host: 4567, guest: 6543
   config.vm.provider "virtualbox" do |v|
